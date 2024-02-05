@@ -1,4 +1,4 @@
-RegisterNetEvent('Telegram:SendMessage', function(firstname, lastname, message)
+RegisterNetEvent('dk-telegram:server:SendMessage', function(firstname, lastname, message)
 	local src = source
 	local result = MySQL.scalar.await('SELECT citizenid FROM players WHERE JSON_EXTRACT(charinfo, "$.firstname") = ? AND JSON_EXTRACT(charinfo, "$.lastname") = ?', {firstname:lower(), lastname:lower()})
 	if result then
