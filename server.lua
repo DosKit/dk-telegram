@@ -9,7 +9,6 @@ RegisterNetEvent('Telegram:SendMessage', function(firstname, lastname, message)
 		if not PlayerSource then return end
 		local data = MySQL.query.await('SELECT * FROM telegrams WHERE receiver = ?', {result})
 		TriggerClientEvent('dk-telegram:client:UpdateTelegrams', PlayerSource, data)
-		TriggerClientEvent('qbr-witness:client:WitnessAlert', PlayerSource, 'TELEGRAM', 'You Received a New Telegram')
 	else
 		TriggerClientEvent('QBCore:Notify', src, 9, 'Unable to process Telegram. Invalid first or lastname.', 2000, 0, 'mp_lobby_textures', 'cross')
 	end
