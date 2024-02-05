@@ -54,7 +54,7 @@ local function SendTelegramMenu(data)
         },
     })
     if not data then return end
-    TriggerServerEvent("Telegram:SendMessage", data.firstname, data.lastname, data.message)
+    TriggerServerEvent('dk-telegram:server:SendMessage', data.firstname, data.lastname, data.message)
 end
 
 local function EditTelegram(data)
